@@ -1,0 +1,43 @@
+/* Mobile First Breakpoint Mixins */
+@custom-media --sm-up (min-width: var(--breakpoint-sm));
+@custom-media --md-up (min-width: var(--breakpoint-md));
+@custom-media --lg-up (min-width: var(--breakpoint-lg));
+@custom-media --xl-up (min-width: var(--breakpoint-xl));
+
+/* Max-width queries for specific cases */
+@custom-media --sm-only (max-width: calc(var(--breakpoint-md) - 1px));
+@custom-media --md-only (min-width: var(--breakpoint-md)) and (max-width: calc(var(--breakpoint-lg) - 1px));
+@custom-media --lg-only (min-width: var(--breakpoint-lg)) and (max-width: calc(var(--breakpoint-xl) - 1px));
+
+/* Container max-widths */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-md);
+}
+
+@media (--sm-up) {
+    .container {
+        max-width: var(--container-sm);
+    }
+}
+
+@media (--md-up) {
+    .container {
+        max-width: var(--container-md);
+    }
+}
+
+@media (--lg-up) {
+    .container {
+        max-width: var(--container-lg);
+    }
+}
+
+@media (--xl-up) {
+    .container {
+        max-width: var(--container-xl);
+    }
+}

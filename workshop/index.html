@@ -3,97 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Training Series - Jeel</title>
-    <!-- Load external resources first -->
+    <meta name="description" content="Dev360: A comprehensive program for developing your full potential as a software developer">
+    <title>Dev360: Developing Your Full Potential</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Load custom styles last -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-container">
+    <div class="app">
         <!-- Sidebar -->
-        <nav class="sidebar">
-            <div class="sidebar-header">
-                <h2>Technical Training Series</h2>
-            </div>
-            <ul class="week-list">
-                <li class="active" data-week="1">
-                    <i class="fas fa-book-open"></i> Week 1: From Code to Value: Understanding Business Impact
+        <nav class="sidebar" aria-label="Course navigation">
+            <h1 class="sidebar__title">Dev360: Developing Your Full Potential</h1>
+            <ul class="sidebar__list" role="list">
+                <li class="sidebar__item sidebar__item--active" data-week="1">
+                    <i class="fas fa-book-open" aria-hidden="true"></i>
+                    <span>Week 1: From Code to Value: Understanding Business Impact</span>
                 </li>
-                <li data-week="2">
-                    <i class="fas fa-lock"></i> Week 2:The Psychology of High-Performing Tech Teams
+                <li class="sidebar__item" data-week="2">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 2: The Psychology of High-Performing Tech Teams</span>
                 </li>
-                <li data-week="3">
-                    <i class="fas fa-lock"></i> Week 3: Crafting Effective User Stories
+                <li class="sidebar__item" data-week="3">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 3: Crafting Effective User Stories</span>
                 </li>
-                <li data-week="4">
-                    <i class="fas fa-lock"></i> Week 4: Strategic Problem-Solving Beyond the Codebase
+                <li class="sidebar__item" data-week="4">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 4: Strategic Problem-Solving Beyond the Codebase</span>
                 </li>
-                <li data-week="5">
-                    <i class="fas fa-lock"></i> Week 5: Building Inclusive Tech Teams and Workspaces
+                <li class="sidebar__item" data-week="5">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 5: Building Inclusive Tech Teams and Workspaces</span>
                 </li>
-                <li data-week="6">
-                    <i class="fas fa-lock"></i> Week 6: Scaling Systems and Teams Successfully
+                <li class="sidebar__item" data-week="6">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 6: Scaling Systems and Teams Successfully</span>
                 </li>
-                <li data-week="7">
-                    <i class="fas fa-lock"></i> Week 7: Influencing Without Authority in Tech Teams
+                <li class="sidebar__item" data-week="7">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 7: Influencing Without Authority in Tech Teams</span>
                 </li>
-                <li data-week="8">
-                    <i class="fas fa-lock"></i> Week 8: Navigating Career Growth in Tech
+                <li class="sidebar__item" data-week="8">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Week 8: Navigating Career Growth in Tech</span>
                 </li>
             </ul>
         </nav>
 
         <!-- Main Content -->
-        <main class="main-content">
-            <div class="tab-controls">
-                <button class="tab-btn active" data-tab="content">Content</button>
-                <button class="tab-btn" data-tab="resources">Resources</button>
-            </div>
+        <main class="main">
+            <div class="tabs" role="tablist">
+                <nav class="tabs__controls" aria-label="Content sections">
+                    <button class="tabs__button tabs__button--active" 
+                            role="tab" 
+                            aria-selected="true" 
+                            aria-controls="contentPanel" 
+                            data-tab="content">
+                        Content
+                    </button>
+                    <button class="tabs__button" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="resourcesPanel" 
+                            data-tab="resources">
+                        Resources
+                    </button>
+                </nav>
 
-            <!-- Content Tab -->
-            <div class="tab-panel active" id="contentPanel">
-                <div class="slide-container">
-                    <div class="slide-navigation">
-                        <button class="nav-btn prev" id="prevSlide" aria-label="Previous slide">
-                            <i class="fas fa-chevron-left"></i> Previous
-                        </button>
-                        <div class="slide-progress">
-                            Slide <span id="currentSlide">1</span>/<span id="totalSlides">10</span>
-                        </div>
-                        <button class="nav-btn next" id="nextSlide" aria-label="Next slide">
-                            Next <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
+                <div class="tabs__content">
+                    <!-- Content Tab -->
+                    <section class="tabs__panel tabs__panel--active tabs__panel--content" 
+                             id="contentPanel"
+                             role="tabpanel"
+                             aria-labelledby="content-tab">
+                        <div class="slide-container">
+                            <div class="slide-nav">
+                                <button class="slide-nav__button slide-nav__button--prev" 
+                                        id="prevSlide" 
+                                        disabled
+                                        aria-label="Previous slide">
+                                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                    <span class="slide-nav__button-text">Previous</span>
+                                </button>
+                                <div class="slide-nav__progress" aria-live="polite">
+                                    Slide <span id="currentSlide">1</span>/<span id="totalSlides">6</span>
+                                </div>
+                                <button class="slide-nav__button slide-nav__button--next" 
+                                        id="nextSlide"
+                                        aria-label="Next slide">
+                                    <span class="slide-nav__button-text">Next</span>
+                                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
 
-                    <div class="slides" role="region" aria-live="polite">
-                        <!-- Slides will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Resources Tab -->
-            <div class="tab-panel" id="resourcesPanel">
-                <div class="resources-container">
-                    <section class="resource-section" data-section="recommended">
-                        <h2>Recommended Reading</h2>
-                        <div class="resource-list">
-                            <!-- Resources will be dynamically inserted here -->
+                            <div class="slides" aria-live="polite">
+                                <!-- Slides will be dynamically inserted here -->
+                            </div>
                         </div>
                     </section>
 
-                    <section class="resource-section" data-section="practice">
-                        <h2>Practice Materials</h2>
-                        <div class="resource-list">
-                            <!-- Practice materials will be dynamically inserted here -->
-                        </div>
-                    </section>
+                    <!-- Resources Tab -->
+                    <section class="tabs__panel tabs__panel--resources" 
+                             id="resourcesPanel"
+                             role="tabpanel"
+                             aria-labelledby="resources-tab">
+                        <div class="resources">
+                            <section class="resources__section" data-section="recommended">
+                                <h2 class="resources__title">Recommended Reading</h2>
+                                <div class="resources__list" role="list"></div>
+                            </section>
 
-                    <section class="resource-section" data-section="additional">
-                        <h2>Additional Resources</h2>
-                        <div class="resource-list">
-                            <!-- Additional resources will be dynamically inserted here -->
+                            <section class="resources__section" data-section="practice">
+                                <h2 class="resources__title">Practice Materials</h2>
+                                <div class="resources__list" role="list"></div>
+                            </section>
+
+                            <section class="resources__section" data-section="additional">
+                                <h2 class="resources__title">Additional Resources</h2>
+                                <div class="resources__list" role="list"></div>
+                            </section>
                         </div>
                     </section>
                 </div>

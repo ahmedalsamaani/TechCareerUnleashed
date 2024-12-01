@@ -1,11 +1,10 @@
-// Resource type to Font Awesome icon mapping
 const iconMap = {
     article: 'fa-file-alt',
+    research: 'fa-microscope',
+    guide: 'fa-compass',
     book: 'fa-book',
-    template: 'fa-file-code',
-    framework: 'fa-project-diagram',
-    course: 'fa-graduation-cap',
-    blog: 'fa-rss'
+    video: 'fa-video',
+    course: 'fa-graduation-cap'
 };
 
 /**

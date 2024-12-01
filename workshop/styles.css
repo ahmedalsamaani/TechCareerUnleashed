@@ -1,15 +1,100 @@
-/* Import base styles */
+/* Base Styles */
 @import './css/base/variables.css';
 @import './css/base/reset.css';
 
-/* Import layouts */
+/* Utils */
+@import './css/utils/breakpoints.css';
+@import './css/animations.css';
+
+/* Layout */
 @import './css/layout/grid.css';
 
-/* Import components */
-@import './css/components/sidebar.css';
+/* Components */
 @import './css/components/tabs.css';
-@import './css/components/resources.css';
 @import './css/components/slides.css';
+@import './css/components/sidebar.css';
+@import './css/components/resources.css';
 
-/* Import utilities */
-@import './css/utils/responsive.css';
+/* Root App Styles */
+.app {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+/* Utility Classes */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+/* Print Styles */
+@media print {
+    .app {
+        display: block;
+    }
+
+    .sidebar,
+    .tabs__controls {
+        display: none;
+    }
+
+    .slide-nav__button {
+        display: none;
+    }
+
+    .slide {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #000080;
+        --primary-turquoise: #008080;
+        --text-secondary: #000000;
+        --border-light: #000000;
+    }
+
+    .slide__title,
+    .slide__objectives,
+    .slide__practice,
+    .slide__discussion {
+        background: var(--primary-blue);
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: var(--text-light);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

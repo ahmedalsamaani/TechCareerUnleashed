@@ -1,55 +1,86 @@
 import { getResourceIcon } from '../utils/icons.js';
 
 export class UIManager {
-    constructor(weekContent) {
+    constructor() {
+        this.weekContent = null;
+    }
+
+    init(weekContent) {
         this.weekContent = weekContent;
     }
 
+    getTotalSlides(weekNum) {
+        return this.weekContent[weekNum]?.slides.length || 0;
+    }
+
+    updateUI(state) {
+        this.updateWeekSelection(state.currentWeek);
+        this.updateTabs(state.currentTab);
+        
+        if (state.currentTab === 'content') {
+            this.updateSlide(state.currentWeek, state.currentSlide);
+        } else {
+            this.updateResources(state.currentWeek);
+        }
+    }
+
     updateWeekSelection(currentWeek) {
-        document.querySelectorAll('.week-list li').forEach(li => {
-            const weekNum = parseInt(li.dataset.week);
-            li.classList.toggle('active', weekNum === currentWeek);
-            li.setAttribute('aria-current', weekNum === currentWeek ? 'true' : 'false');
+        document.querySelectorAll('.sidebar__item').forEach(item => {
+            const weekNum = parseInt(item.dataset.week);
+            item.classList.toggle('sidebar__item--active', weekNum === currentWeek);
+            item.setAttribute('aria-current', weekNum === currentWeek ? 'true' : 'false');
+        });
+    }
+
+    updateTabs(currentTab) {
+        document.querySelectorAll('.tabs__button').forEach(btn => {
+            const isActive = btn.dataset.tab === currentTab;
+            btn.classList.toggle('tabs__button--active', isActive);
+            btn.setAttribute('aria-selected', isActive);
+        });
+
+        document.querySelectorAll('.tabs__panel').forEach(panel => {
+            const isActive = panel.id === `${currentTab}Panel`;
+            panel.classList.toggle('tabs__panel--active', isActive);
+            panel.setAttribute('aria-hidden', !isActive);
         });
     }
 
     updateSlide(currentWeek, currentSlide) {
         const slides = document.querySelector('.slides');
         if (!slides) return;
-        
+
         try {
-            slides.innerHTML = '';
-            
-            const currentWeekContent = this.weekContent[currentWeek];
-            if (!currentWeekContent?.slides) {
+            const weekContent = this.weekContent[currentWeek];
+            if (!weekContent?.slides) {
                 throw new Error('Week content not found');
             }
-            
-            const slide = currentWeekContent.slides[currentSlide - 1];
+
+            const slide = weekContent.slides[currentSlide - 1];
             if (!slide) {
                 throw new Error('Slide not found');
             }
-            
-            this.renderSlide(slides, slide, currentSlide);
-            this.updateNavigation(currentSlide, currentWeekContent.slides.length);
-            
+
+            // Create slide element with proper structure
+            const slideElement = document.createElement('div');
+            slideElement.className = 'slide slide--active';
+            slideElement.innerHTML = `
+                <div class="slide__content">
+                    <h1 class="slide__title">${slide.title}</h1>
+                    ${slide.subtitle ? `<h3 class="slide__subtitle">${slide.subtitle}</h3>` : ''}
+                    ${slide.content}
+                </div>
+            `;
+
+            // Clear and append new slide
+            slides.innerHTML = '';
+            slides.appendChild(slideElement);
+
+            this.updateNavigation(currentSlide, weekContent.slides.length);
         } catch (error) {
             console.error('Error updating slide:', error);
             this.showError(slides, 'Unable to load slide content');
         }
-    }
-
-    renderSlide(container, slide, slideNumber) {
-        const slideElement = document.createElement('div');
-        slideElement.className = 'slide active';
-        slideElement.setAttribute('role', 'region');
-        slideElement.setAttribute('aria-label', `Slide ${slideNumber}`);
-        slideElement.innerHTML = `
-            <h1>${slide.title}</h1>
-            ${slide.subtitle ? `<h3>${slide.subtitle}</h3>` : ''}
-            ${slide.content}
-        `;
-        container.appendChild(slideElement);
     }
 
     updateNavigation(currentSlide, totalSlides) {
@@ -60,7 +91,7 @@ export class UIManager {
 
         if (currentSlideEl) currentSlideEl.textContent = currentSlide;
         if (totalSlidesEl) totalSlidesEl.textContent = totalSlides;
-        
+
         if (prevBtn) {
             prevBtn.disabled = currentSlide === 1;
             prevBtn.setAttribute('aria-disabled', currentSlide === 1);
@@ -71,63 +102,43 @@ export class UIManager {
         }
     }
 
-    updateTabs(currentTab) {
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            const isActive = btn.dataset.tab === currentTab;
-            btn.classList.toggle('active', isActive);
-            btn.setAttribute('aria-selected', isActive);
-        });
-        
-        document.querySelectorAll('.tab-panel').forEach(panel => {
-            const isActive = panel.id === `${currentTab}Panel`;
-            panel.classList.toggle('active', isActive);
-            panel.setAttribute('aria-hidden', !isActive);
-        });
-    }
-
-    renderResources(currentWeek) {
+    updateResources(currentWeek) {
         const resourcesPanel = document.getElementById('resourcesPanel');
         if (!resourcesPanel) return;
-        
+
         try {
-            const currentWeekContent = this.weekContent[currentWeek];
-            if (!currentWeekContent?.resources) {
+            const weekContent = this.weekContent[currentWeek];
+            if (!weekContent?.resources) {
                 throw new Error('Resources not found');
             }
-            
-            Object.entries(currentWeekContent.resources).forEach(([section, items]) => {
-                this.renderResourceSection(resourcesPanel, section, items);
+
+            Object.entries(weekContent.resources).forEach(([section, items]) => {
+                const sectionEl = resourcesPanel.querySelector(`[data-section="${section}"]`);
+                if (!sectionEl) return;
+
+                const list = sectionEl.querySelector('.resources__list');
+                if (!list) return;
+
+                list.innerHTML = items.map(item => this.createResourceItem(item)).join('');
             });
         } catch (error) {
-            console.error('Error rendering resources:', error);
+            console.error('Error updating resources:', error);
             this.showError(resourcesPanel, 'Unable to load resources');
         }
     }
 
-    renderResourceSection(panel, section, items) {
-        const sectionElement = panel.querySelector(`[data-section="${section}"]`);
-        if (!sectionElement) return;
-        
-        const list = sectionElement.querySelector('.resource-list');
-        if (!list) return;
-        
-        list.innerHTML = items.map(item => this.createResourceItem(item)).join('');
-    }
-
     createResourceItem(item) {
         return `
-            <div class="resource-item">
+            <div class="resources__item resources__item--${item.type}">
                 <i class="fas ${getResourceIcon(item.type)}" aria-hidden="true"></i>
-                <div class="resource-content">
-                    <h3>${item.title}</h3>
-                    <p>${item.description}</p>
-                    <a href="${item.link}" 
-                       class="resource-link" 
-                       target="_blank" 
-                       rel="noopener noreferrer">
-                        Read More<span class="sr-only"> about ${item.title}</span>
-                    </a>
-                </div>
+                <h3 class="resources__item-title">${item.title}</h3>
+                <p class="resources__item-description">${item.description}</p>
+                <a href="${item.link}" 
+                   class="resources__item-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    Read More<span class="visually-hidden"> about ${item.title}</span>
+                </a>
             </div>
         `;
     }
@@ -139,17 +150,5 @@ export class UIManager {
                 <p>Please try again later.</p>
             </div>
         `;
-    }
-
-    updateUI(state) {
-        try {
-            this.updateWeekSelection(state.currentWeek);
-            this.updateSlide(state.currentWeek, state.currentSlide);
-            this.updateTabs(state.currentTab);
-            this.renderResources(state.currentWeek);
-        } catch (error) {
-            console.error('Error updating UI:', error);
-            this.showError(document.querySelector('.slides'), 'Something went wrong');
-        }
     }
 }
