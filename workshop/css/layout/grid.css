@@ -21,20 +21,23 @@
     z-index: 1; /* Ensure proper stacking with sidebar */
 }
 
+/* Tab Panels Container */
+.main-content > :not(.tab-controls) {
+    position: relative;
+    flex: 1;
+    min-height: 0; /* Allow content to determine height */
+}
+
 /* Content Panel */
 #contentPanel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative; /* For proper z-index handling */
+    width: 100%;
+    height: 100%;
 }
 
 /* Resources Panel */
 #resourcesPanel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative; /* For proper z-index handling */
+    width: 100%;
+    height: 100%;
 }
 
 /* Responsive Layout */

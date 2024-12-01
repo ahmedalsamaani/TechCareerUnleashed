@@ -50,11 +50,17 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    visibility: hidden;
 }
 
 .tab-panel.active {
     display: block;
     opacity: 1;
+    position: relative;
+    visibility: visible;
     animation: fadeIn 0.3s ease-in-out;
 }
 
