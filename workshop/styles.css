@@ -1,0 +1,15 @@
+/* Import base styles */
+@import './css/base/variables.css';
+@import './css/base/reset.css';
+
+/* Import layouts */
+@import './css/layout/grid.css';
+
+/* Import components */
+@import './css/components/sidebar.css';
+@import './css/components/tabs.css';
+@import './css/components/resources.css';
+@import './css/components/slides.css';
+
+/* Import utilities */
+@import './css/utils/responsive.css';

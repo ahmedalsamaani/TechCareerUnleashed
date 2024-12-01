@@ -1,0 +1,50 @@
+/* Sidebar Styles */
+.sidebar {
+    background: var(--primary-gradient);
+    height: 100vh;
+    position: fixed;
+    width: 300px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 2rem;
+}
+
+.sidebar-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.week-list {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.week-list li {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.week-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--primary-turquoise);
+}
+
+.week-list li.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-left-color: var(--primary-turquoise);
+    font-weight: 600;
+}
+
+.week-list li i {
+    font-size: 1.1rem;
+    color: var(--primary-turquoise);
+}
