@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    contain: content;
 }
 
 /* Tab Controls */
@@ -17,7 +16,6 @@
     border-bottom: 2px solid var(--border-light);
     padding-bottom: var(--spacing-sm);
     background: var(--bg-primary);
-    will-change: transform;
 }
 
 /* Tab Buttons */
@@ -43,7 +41,6 @@
     background: var(--primary-turquoise);
     transform: scaleX(0);
     transition: transform var(--transition-normal);
-    will-change: transform;
 }
 
 .tabs__button:hover {
@@ -58,37 +55,33 @@
     transform: scaleX(1);
 }
 
+/* Tab Content Container */
+.tabs__content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Tab Panels */
 .tabs__panel {
-    display: none;
+    position: absolute;
+    inset: 0;
     opacity: 0;
-    height: 0;
-    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: opacity var(--transition-normal),
+                visibility var(--transition-normal),
+                transform var(--transition-normal);
 }
 
 .tabs__panel--active {
-    display: block;
+    position: relative;
     opacity: 1;
-    height: auto;
-    overflow: visible;
-    animation: fadeIn var(--animation-duration-normal) var(--animation-curve-smooth);
-}
-
-/* Main content area */
-.tabs__content {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Panel specific styles */
-.tabs__panel--content,
-.tabs__panel--resources {
-    flex: 1;
-}
-
-.tabs__panel--resources .resources-container {
-    padding-top: 0;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
 }
 
 /* Focus States */
@@ -119,5 +112,12 @@
     .tabs__button {
         padding: var(--spacing-xs) var(--spacing-sm);
         font-size: var(--font-size-sm);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .tabs__panel {
+        transition: none;
     }
 }

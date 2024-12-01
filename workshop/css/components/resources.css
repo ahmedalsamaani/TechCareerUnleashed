@@ -2,7 +2,7 @@
 .resources {
     display: grid;
     gap: var(--spacing-2xl);
-    padding: var(--spacing-lg);
+    padding: 0;
     contain: content;
 }
 
@@ -172,7 +172,6 @@
 
 @media (max-width: var(--breakpoint-sm)) {
     .resources {
-        padding: var(--spacing-md);
         gap: var(--spacing-lg);
     }
 
