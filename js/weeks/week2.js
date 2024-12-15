@@ -134,7 +134,7 @@ export const week2Content = {
                     
                     <div class="slide__preview">
                         <h4 class="slide__heading">Coming Next Week</h4>
-                        <p class="slide__text">Week 3: [Next Topic]</p>
+                        <p class="slide__text">Week 3: Coming Soon</p>
                     </div>
                 </div>
             `
@@ -142,28 +142,40 @@ export const week2Content = {
     ],
     resources: {
         recommended: [
-            {
-                title: "Embracing Ambiguity in Software Development",
-                description: "Learn how successful developers navigate unclear requirements and changing priorities",
-                type: "article",
-                link: "https://martinfowler.com/articles/developer-effectiveness.html"
-            }
+        {
+            title: "Dealing with Uncertainty and Ambiguity - A Primer",
+            description: "Essential guide for fresh graduates on building emotional resilience and practical strategies for handling workplace uncertainty",
+            type: "article",
+            link: "https://www.designative.info/2023/02/04/dealing-uncertainty-ambiguity-primer-principles-design-strategy/"
+        },
+           {
+            title: "7 Tips To Identify and Manage Ambiguity",
+            description: "Practical techniques for overcoming ambiguous situations in the workplace",
+            type: "article",
+            link: "https://www.indeed.com/career-advice/career-development/dealing-with-ambiguity"
+        },
+        {
+            title: "Acting in Ambiguity",
+            description: "Four distinct approaches to dealing with ambiguity in professional settings",
+            type: "article",
+            link: "https://www.cocreact.com/news/acting-in-ambiguity"
+        }
         ],
         practice: [
-            {
-                title: "Question Framework Template",
-                description: "A structured approach to asking effective clarifying questions",
-                type: "template",
-                link: "https://www.atlassian.com/work-management/project-requirements"
-            }
+           {
+            title: "Reducing Uncertainty and Ambiguity",
+            description: "Exercises for thinking through and managing uncertain situations",
+            type: "article",
+            link: "https://www.informit.com/articles/article.aspx?p=3172434"
+        }
         ],
         additional: [
             {
-                title: "Managing Ambiguity",
-                description: "Harvard Business Review's guide to thriving in uncertain environments",
-                type: "guide",
-                link: "https://hbr.org/2021/09/managing-through-crises"
-            }
+            title: "Managing Uncertainty in Career Development",
+            description: "Research-based strategies for career planning and development",
+            type: "article",
+            link: "https://www.researchgate.net/publication/327854118_Managing_uncertainty_in_the_career_development_of_emerging_adults"
+        }
         ]
     }
 };

@@ -342,3 +342,132 @@
         opacity: 1;
     }
 }
+/* Week 2 Specific Styles */
+
+/* Uncertainty Types Grid */
+.slide__uncertainty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+/* Scenario Examples */
+.slide__scenario {
+    background: var(--bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    border-left: 4px solid var(--primary-turquoise);
+    transition: transform var(--transition-normal);
+}
+
+.slide__scenario:hover {
+    transform: translateX(5px);
+}
+
+.slide__scenario-title {
+    color: var(--primary-blue);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.slide__scenario-quote {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-left: 2px solid var(--primary-turquoise);
+}
+
+/* Strategy Cards */
+.slide__strategy-card {
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: var(--spacing-md) 0;
+    border: 1px solid var(--border-light);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.slide__strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Exercise Components */
+.slide__exercise {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.slide__exercise-steps {
+    margin-top: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.slide__exercise-step {
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+/* Action Items Section */
+.slide__action-items {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.slide__action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.slide__action-icon {
+    color: var(--primary-turquoise);
+    font-size: var(--font-size-xl);
+}
+
+/* Responsive Adjustments */
+@media (max-width: var(--breakpoint-md)) {
+    .slide__uncertainty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slide__scenario,
+    .slide__strategy-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .slide__scenario {
+        border-left: 4px solid var(--text-primary);
+    }
+
+    .slide__strategy-card {
+        border: 2px solid var(--text-primary);
+    }
+
+    .slide__exercise {
+        background: var(--primary-blue);
+        border: 2px solid var(--text-light);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .slide__scenario,
+    .slide__strategy-card {
+        transition: none;
+    }
+}
