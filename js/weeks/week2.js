@@ -1,56 +1,104 @@
 export const week2Content = {
-    title: "Navigating the Fog: Managing Uncertainty and Ambiguity in Tech",
+    title: "Navigating the Unknown: From College Structure to Workplace Ambiguity",
     slides: [
         {
-            title: "Navigating the Fog",
-            subtitle: "Managing Uncertainty and Ambiguity in Tech",
+            title: "Welcome to the Real World",
+            subtitle: "Understanding the Shift from College to Work",
             content: `
                 <div class="slide__overview">
                     <h4 class="slide__heading">Workshop Overview</h4>
                     <ul class="slide__list">
                         <li class="slide__list-item"><strong>Duration:</strong> 60 minutes</li>
-                        <li class="slide__list-item"><strong>Format:</strong> Interactive discussion</li>
-                        <li class="slide__list-item"><strong>Activities:</strong> Group exercises</li>
+                        <li class="slide__list-item"><strong>Goal:</strong> Understanding and embracing uncertainty</li>
                     </ul>
                     
-                    <div class="slide__objectives">
-                        <h4 class="slide__objectives-heading">What You'll Learn</h4>
-                        <ul class="slide__objectives-list">
-                            <li class="slide__objectives-item">Understanding different types of workplace ambiguity</li>
-                            <li class="slide__objectives-item">Developing strategies for unclear situations</li>
-                            <li class="slide__objectives-item">Building confidence in uncertain environments</li>
-                        </ul>
+                    <div class="slide__comparison-grid">
+                        <div class="slide__grid-item">
+                            <h4>College Life</h4>
+                            <ul>
+                                <li>Clear assignments</li>
+                                <li>Fixed deadlines</li>
+                                <li>Defined grading criteria</li>
+                                <li>Semester structure</li>
+                            </ul>
+                        </div>
+                        <div class="slide__grid-item">
+                            <h4>Work Life</h4>
+                            <ul>
+                                <li>Open-ended projects</li>
+                                <li>Shifting priorities</li>
+                                <li>Multiple stakeholders</li>
+                                <li>Continuous evolution</li>
+                            </ul>
+                        </div>
                     </div>
-                    
+
                     <div class="slide__interactive">
-                        <h4 class="slide__heading">Opening Discussion</h4>
-                        <p class="slide__text">"What makes you most uncertain about your role?"</p>
+                        <h4>Opening Discussion</h4>
+                        <p>"What's your biggest concern about this transition?"</p>
                     </div>
                 </div>
             `
         },
         {
-            title: "Types of Uncertainty",
-            subtitle: "Understanding Different Challenges",
+            title: "Types of Uncertainty You'll Face",
+            subtitle: "It's Normal to Feel Lost Sometimes",
             content: `
                 <div class="slide__section">
                     <div class="slide__grid">
                         <div class="slide__grid-item">
-                            <h4 class="slide__heading">Day-to-Day Ambiguity</h4>
-                            <ul class="slide__list">
-                                <li class="slide__list-item">Unclear requirements</li>
-                                <li class="slide__list-item">Changing priorities</li>
-                                <li class="slide__list-item">Multiple interpretations</li>
-                                <li class="slide__list-item">Competing demands</li>
+                            <h4>Day-to-Day Uncertainties</h4>
+                            <ul>
+                                <li>Vague task descriptions</li>
+                                <li>"Make it better" feedback</li>
+                                <li>Unspoken expectations</li>
+                                <li>Technical choices</li>
                             </ul>
                         </div>
                         <div class="slide__grid-item">
-                            <h4 class="slide__heading">Bigger Picture Uncertainty</h4>
-                            <ul class="slide__list">
-                                <li class="slide__list-item">Project direction</li>
-                                <li class="slide__list-item">Career path</li>
-                                <li class="slide__list-item">Company goals</li>
-                                <li class="slide__list-item">Role impact</li>
+                            <h4>Big Picture Questions</h4>
+                            <ul>
+                                <li>Career direction</li>
+                                <li>Skill development</li>
+                                <li>Team dynamics</li>
+                                <li>Industry changes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slide__quote">
+                        <p>"Learning to embrace uncertainty and welcome it is a key ingredient for success"</p>
+                    </div>
+                </div>
+            `
+        },
+        {
+            title: "Real Scenarios You'll Encounter",
+            subtitle: "Common Situations & How to Handle Them",
+            content: `
+                <div class="slide__scenarios">
+                    <div class="slide__scenario">
+                        <h4>Scenario 1: The Vague Feature Request</h4>
+                        <p class="slide__scenario-quote">"Can you make this more intuitive?"</p>
+                        <div class="slide__strategy">
+                            <h5>How to Handle:</h5>
+                            <ul>
+                                <li>Ask for specific examples</li>
+                                <li>Identify user pain points</li>
+                                <li>Present multiple options</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="slide__scenario">
+                        <h4>Scenario 2: The Unclear Role</h4>
+                        <p class="slide__scenario-quote">"You'll figure it out as you go"</p>
+                        <div class="slide__strategy">
+                            <h5>How to Handle:</h5>
+                            <ul>
+                                <li>Set up regular check-ins</li>
+                                <li>Document your understanding</li>
+                                <li>Seek mentor guidance</li>
                             </ul>
                         </div>
                     </div>
@@ -58,89 +106,67 @@ export const week2Content = {
             `
         },
         {
-            title: "Common Scenarios",
-            subtitle: "Real-World Examples",
+            title: "Building Your Confidence",
+            subtitle: "Practical Strategies for Success",
             content: `
-                <div class="slide__section">
-                    <div class="slide__example">
-                        <h4 class="slide__heading">Example: Feature Request</h4>
-                        <p class="slide__text">"Make it more user-friendly"</p>
-                        <ul class="slide__list">
-                            <li class="slide__list-item">Vague requirements</li>
-                            <li class="slide__list-item">Multiple interpretations</li>
-                            <li class="slide__list-item">Undefined success criteria</li>
+                <div class="slide__strategies">
+                    <div class="slide__strategy-card">
+                        <h4>1. Ask Smart Questions</h4>
+                        <ul>
+                            <li>What does success look like?</li>
+                            <li>Who are the key stakeholders?</li>
+                            <li>What are the constraints?</li>
                         </ul>
                     </div>
-                    
-                    <div class="slide__example">
-                        <h4 class="slide__heading">Example: Project Scope</h4>
-                        <p class="slide__text">"We need this ASAP"</p>
-                        <ul class="slide__list">
-                            <li class="slide__list-item">Unclear timeline</li>
-                            <li class="slide__list-item">Undefined priorities</li>
-                            <li class="slide__list-item">Resource uncertainty</li>
+
+                    <div class="slide__strategy-card">
+                        <h4>2. Document Everything</h4>
+                        <ul>
+                            <li>Keep meeting notes</li>
+                            <li>Track decisions made</li>
+                            <li>List your assumptions</li>
                         </ul>
                     </div>
-                </div>
-            `
-        },
-        {
-            title: "Practical Strategies",
-            subtitle: "Handling Ambiguity",
-            content: `
-                <div class="slide__section">
-                    <div class="slide__overview">
-                        <h4 class="slide__heading">Key Approaches</h4>
-                        <ul class="slide__list">
-                            <li class="slide__list-item"><strong>Ask Smart Questions:</strong> Learn to probe effectively</li>
-                            <li class="slide__list-item"><strong>Document Everything:</strong> Track assumptions and decisions</li>
-                            <li class="slide__list-item"><strong>Break It Down:</strong> Convert big unknowns into smaller pieces</li>
-                            <li class="slide__list-item"><strong>Validate Early:</strong> Get feedback on assumptions</li>
+
+                    <div class="slide__strategy-card">
+                        <h4>3. Build Your Network</h4>
+                        <ul>
+                            <li>Find mentors</li>
+                            <li>Connect with peers</li>
+                            <li>Join communities</li>
                         </ul>
                     </div>
                 </div>
             `
         },
         {
-            title: "Interactive Exercise",
-            subtitle: "The Unclear Project",
-            content: `
-                <div class="slide__practice">
-                    <h4 class="slide__practice-heading">Group Exercise</h4>
-                    <p class="slide__practice-text">Work with a vague project scenario</p>
-                    <ul class="slide__list">
-                        <li class="slide__list-item">Identify what you know vs don't know</li>
-                        <li class="slide__list-item">Form clarifying questions</li>
-                        <li class="slide__list-item">Make and document assumptions</li>
-                        <li class="slide__list-item">Propose an approach</li>
-                    </ul>
-                </div>
-            `
-        },
-        {
-            title: "Next Steps",
-            subtitle: "Building Your Confidence",
+            title: "Taking Action",
+            subtitle: "Your Next Steps",
             content: `
                 <div class="slide__section">
-                    <div class="slide__overview">
-                        <h4 class="slide__heading">Action Items</h4>
-                        <ul class="slide__list">
-                            <li class="slide__list-item">Practice asking clarifying questions</li>
-                            <li class="slide__list-item">Start documenting assumptions</li>
-                            <li class="slide__list-item">Build a question framework</li>
-                            <li class="slide__list-item">Reflect on uncertain situations</li>
+                    <div class="slide__action-items">
+                        <h4>This Week's Challenges</h4>
+                        <ul>
+                            <li>Note one unclear situation each day</li>
+                            <li>Practice asking clarifying questions</li>
+                            <li>Share experiences with peers</li>
+                            <li>Reflect on what you learn</li>
                         </ul>
                     </div>
-                    
-                    <div class="slide__preview">
-                        <h4 class="slide__heading">Coming Next Week</h4>
-                        <p class="slide__text">Week 3: Coming Soon</p>
+
+                    <div class="slide__reminder">
+                        <h4>Remember</h4>
+                        <ul>
+                            <li>Everyone starts somewhere</li>
+                            <li>It's okay to not know everything</li>
+                            <li>Focus on learning, not perfection</li>
+                        </ul>
                     </div>
                 </div>
             `
         }
     ],
-    resources: {
+     resources: {
         recommended: [
         {
             title: "Dealing with Uncertainty and Ambiguity - A Primer",
