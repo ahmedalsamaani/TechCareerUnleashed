@@ -27,6 +27,7 @@ export class StateManager {
         return (
             typeof state.currentWeek === 'number' &&
             state.currentWeek >= 1 &&
+            state.currentWeek <= 2 &&  // Updated to include Week 2
             typeof state.currentSlide === 'number' &&
             state.currentSlide >= 1 &&
             ['content', 'resources'].includes(state.currentTab)

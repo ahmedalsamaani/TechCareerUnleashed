@@ -29,6 +29,14 @@ export class UIManager {
             const weekNum = parseInt(item.dataset.week);
             item.classList.toggle('sidebar__item--active', weekNum === currentWeek);
             item.setAttribute('aria-current', weekNum === currentWeek ? 'true' : 'false');
+            
+            // Update icon based on availability
+            const icon = item.querySelector('i');
+            if (weekNum <= 2) {  // Changed this line
+                icon.className = 'fas fa-book-open';
+            } else {
+                icon.className = 'fas fa-lock';
+            }
         });
     }
 

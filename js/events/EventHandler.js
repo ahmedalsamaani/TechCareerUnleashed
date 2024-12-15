@@ -15,11 +15,19 @@ export class EventHandler {
         document.querySelectorAll('.sidebar__item').forEach(li => {
             li.addEventListener('click', () => {
                 const weekNum = parseInt(li.dataset.week);
-                if (weekNum === 1 || confirm('This week\'s content is not yet available. Would you like to preview it?')) {
+                // Update condition to include Week 2
+                if (weekNum === 1 || weekNum === 2) {  // Changed this line
                     this.stateManager.setState({
                         currentWeek: weekNum,
                         currentSlide: 1
                     });
+                } else {
+                    if (confirm('This week\'s content is not yet available. Would you like to preview it?')) {
+                        this.stateManager.setState({
+                            currentWeek: weekNum,
+                            currentSlide: 1
+                        });
+                    }
                 }
             });
         });
