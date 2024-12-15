@@ -170,9 +170,9 @@ export const week1Content = {
                     </div>
                     
                     <div class="slide__preview">
-                        <h4 class="slide__heading">Coming Next Week</h4>
-                        <p class="slide__text">Team Dynamics in Tech: Building Effective Relationships</p>
-                    </div>
+    <h4 class="slide__heading">Coming Next Week</h4>
+    <p class="slide__text">Navigating the Fog: Managing Uncertainty and Ambiguity in Tech</p>
+</div>
                 </div>
             `
         }
