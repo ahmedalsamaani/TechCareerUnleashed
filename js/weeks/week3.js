@@ -186,6 +186,22 @@ export const week3Content = {
                 type: "article",
                 link: "https://moldstud.com/articles/p-how-to-effectively-communicate-with-non-technical-stakeholders-as-a-software-developer"
             }
+        ],
+        practice: [
+            {
+                title: "7 Ways To Talk Technical With Non-Techie People",
+                description: "This article provides strategies for effectively communicating technical concepts to non-technical stakeholders",
+                type: "article",
+                link: "https://skillpath.com/blog/7-ways-to-talk-technical-with-non-techie-people"
+            }
+        ],
+        additional: [
+            {
+                title: "Structure and Criteria Defining Business Value in Agile Software Development",
+                description: "This guide provides a framework for identifying and measuring business value within agile software development processes",
+                type: "guide",
+                link: "https://ieeexplore.ieee.org/document/9732113"
+            }
         ]
    
     }
