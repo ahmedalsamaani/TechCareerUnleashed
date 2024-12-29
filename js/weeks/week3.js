@@ -19,7 +19,6 @@ export const week3Content = {
                                 <li>Using too much technical jargon</li>
                                 <li>Missing the business context</li>
                                 <li>Unclear documentation</li>
-                                <li>Defensive about feedback</li>
                             </ul>
                         </div>
                         <div class="slide__grid-item">
@@ -28,7 +27,6 @@ export const week3Content = {
                                 <li>Explaining complex concepts simply</li>
                                 <li>Structuring technical presentations</li>
                                 <li>Writing clear documentation</li>
-                                <li>Handling constructive feedback</li>
                             </ul>
                         </div>
                     </div>
@@ -128,14 +126,7 @@ export const week3Content = {
                         </ul>
                     </div>
  
-                    <div class="slide__strategy-card">
-                        <h4>3. Code Review Etiquette</h4>
-                        <ul>
-                            <li>Be specific and constructive</li>
-                            <li>Explain your reasoning</li>
-                            <li>Suggest solutions</li>
-                        </ul>
-                    </div>
+                
                 </div>
             `
         },
@@ -149,7 +140,6 @@ export const week3Content = {
                         <ul>
                             <li>Explain a technical concept to a non-technical friend</li>
                             <li>Document a small feature you've worked on</li>
-                            <li>Practice giving constructive code feedback</li>
                             <li>Create a 5-minute presentation about your current project</li>
                         </ul>
                     </div>
