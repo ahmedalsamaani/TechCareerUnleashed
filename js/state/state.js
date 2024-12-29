@@ -13,13 +13,18 @@ export class StateManager {
     }
 
     setState(updates) {
+        console.log("Setting state:", updates);
         const newState = { ...this.state, ...updates };
+        console.log("New state will be:", newState);
         
         // Validate state changes
         if (this.isValidState(newState)) {
+            console.log("State is valid");
             this.state = newState;
             this.notifyListeners();
             this.persistState();
+        } else {
+            console.log("State validation failed");
         }
     }
 

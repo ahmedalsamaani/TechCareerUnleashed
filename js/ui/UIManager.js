@@ -14,6 +14,8 @@ export class UIManager {
     }
 
     updateUI(state) {
+        console.log("Updating UI with state:", state);
+
         this.updateWeekSelection(state.currentWeek);
         this.updateTabs(state.currentTab);
         
@@ -25,6 +27,8 @@ export class UIManager {
     }
 
     updateWeekSelection(currentWeek) {
+        console.log("Updating week selection:", currentWeek);
+
         document.querySelectorAll('.sidebar__item').forEach(item => {
             const weekNum = parseInt(item.dataset.week);
             item.classList.toggle('sidebar__item--active', weekNum === currentWeek);

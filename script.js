@@ -5,6 +5,8 @@ import { UIManager } from './js/ui/UIManager.js';
 import { StateManager } from './js/state/state.js';
 import { EventHandler } from './js/events/EventHandler.js';
 
+console.log("Week 3 Content:", week3Content); // Add this line
+
 // Initialize managers
 const stateManager = new StateManager();
 const uiManager = new UIManager();
