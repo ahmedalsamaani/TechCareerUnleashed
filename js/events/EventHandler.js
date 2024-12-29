@@ -16,7 +16,7 @@ export class EventHandler {
             li.addEventListener('click', () => {
                 const weekNum = parseInt(li.dataset.week);
                 // Update condition to include Week 2
-                if (weekNum === 1 || weekNum === 2 || weekNum === 3) {  // Changed this line
+                if (weekNum <= 3) {  // Changed this line
                     this.stateManager.setState({
                         currentWeek: weekNum,
                         currentSlide: 1
