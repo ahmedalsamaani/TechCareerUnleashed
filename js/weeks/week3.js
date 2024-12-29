@@ -202,7 +202,7 @@ export const week3Content = {
                 type: "guide",
                 link: "https://ieeexplore.ieee.org/document/9732113"
             }
+            
         ]
-   
     }
- };
+};
