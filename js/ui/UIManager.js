@@ -32,7 +32,7 @@ export class UIManager {
             
             // Update icon based on availability
             const icon = item.querySelector('i');
-            if (weekNum <= 2) {  // Changed this line
+            if (weekNum <= 3) {  // Changed this line
                 icon.className = 'fas fa-book-open';
             } else {
                 icon.className = 'fas fa-lock';
